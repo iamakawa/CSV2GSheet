@@ -33,6 +33,6 @@ function CSV2Gsheet(){
     } 
     var data = response.getContentText("Shift_JIS"); 
     var csv = Utilities.parseCsv(data);
-    sh.getRange(1,1,csv.length,csv[0].length).setValues(csv);
+    sh.getRange(2,1,(csv.length-1),csv[0].length).setValues(csv.slice(1));
   }
 }
